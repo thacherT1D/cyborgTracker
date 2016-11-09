@@ -9,9 +9,12 @@
  */
 angular.module('cyborgTrackerApp')
   .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    this.tasks = [
+      'New OmniPod',
+      'Restart Dexcom',
+      'New Dexcom Sensor',
+      'New PDM Batteries',
+      'Charged Dexcom',
+      'New Lancet'
     ];
   });
