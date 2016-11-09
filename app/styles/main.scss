@@ -2,7 +2,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
+.card {
+  background-color: #ECEBEB;
+  padding: 20px 15px;
+  margin: 10px;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
