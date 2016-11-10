@@ -8,35 +8,28 @@
 
     MainController.$inject = ['MainService'];
 
-  function MainController ($scope, MainService) {
+  function MainController (MainService) {
     var vm = this;
-    $scope.task = {};
-    $scope.add = {};
+
+    vm.task_name = '';
+    vm.task_notes = '';
+
     MainService.getTasks()
       .then(function(tasks) {
         vm.tasks = tasks;
       });
 
-    vm.addOne = function(task) {
-      MainService.doIt(task);
-      console.log(task);
+    vm.newTaskEvent = function(task) {
+      MainService.newTaskEvent(task);
     };
-    // vm.addTask = function() {
-    //   MainService.newTask();
-    // };
-    $scope.add.addTask = function () {
-      vm.tasks.push({
-        task_name: $scope.task.task_name,
-        task_notes: $scope.task.task_notes,
-        completed: 0,
-        last_event: '',
-        events: []
-      })
-      $scope.task = {};
+    vm.newTask = function() {
+      MainService.newTask(vm.task_name, vm.task_notes);
+      vm.task_name = '';
+      vm.task_notes = '';
+    };
+    vm.updateTask = function(task) {
+      MainService.updateTask(vm.task_name, vm.task_notes)
+      console.log(task);
     }
-    // vm.switch = function(task) {
-    //   MainService.toggleButtons(task);
-    //   console.log('toggled!');
-    // };
   }
 })();

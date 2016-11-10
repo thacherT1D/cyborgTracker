@@ -11,6 +11,8 @@
       var task = {};
       var add = {};
       var resolvedData = false;
+      var task_name = '';
+      var task_notes = '';
 
       return {
         getTasks: function () {
@@ -27,23 +29,25 @@
             });
           }
         },
-        doIt: function (task) {
+        newTaskEvent: function (task) {
           task.completed += 1;
           task.last_event = new Date();
           task.events.push(new Date());
         },
-        newTask: function() {
+        newTask: function(task_name, task_notes) {
           tasks.push({
-            task_name: task.task_name,
-            task_notes: task.task_notes,
+            task_name: task_name,
+            task_notes: task_notes,
             completed: 0,
             last_event: '',
             events: []
           });
-          task = {};
+          task_name = {};
+          task_notes = {};
         },
-        clearTaskForm: function() {
-
+        updateTask: function (new_task_name, new_task_notes) {
+          task.task_name = new_task_name;
+          task.task_notes = new_task_notes;
         }
         // toggleButtons: function(task) {
         //     if(task.showButtons == true) {
