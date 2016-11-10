@@ -8,6 +8,7 @@
 
     function MainService ($http, $q) {
       var tasks = [];
+      var task = [];
       var resolvedData = false;
 
       return {
@@ -31,13 +32,14 @@
           task.events.push(new Date());
         },
         newTask: function() {
-          this.tasks.push({
+          tasks.push({
             task_name: task.task_name,
             task_notes: task.task_notes,
             completed: 0,
-            last_event: new Date(),
+            last_event: '',
             events: []
           });
+          task = [];
         },
         clearTaskForm: function() {
 

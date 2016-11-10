@@ -30,9 +30,21 @@
         <p><a ng-click="main.addOne(task)" class="btn btn-block btn-success">
           Do It!
         </a></p>
-        <p><a class="btn btn-block btn-info">
+        <p><a class="btn btn-block btn-info" ng-click="task.showHistory = true">
           History
         </a></p>
+        <div ng-show="task.showHistory">
+          <p>
+            Most Recent: <time am-time-ago="task.last_event"></time>
+          </p>
+          Complete History:
+          <ul>
+            <li ng-repeat="event in task.events">{{ event | date : 'medium' }}</li>
+          </ul>
+          <p><a class="btn btn-xs btn-default" ng-click="task.showHistory = false">
+            Close History
+          </a></p>
+        </div>
         <p><a class="btn btn-block btn-warning">
           Edit Task
         </a></p>
