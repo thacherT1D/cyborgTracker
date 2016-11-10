@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name cyborgTrackerApp
- * @description
- * # cyborgTrackerApp
- *
- * Main module of the application.
- */
 angular
   .module('cyborgTrackerApp', [
     'ngAnimate',
@@ -21,7 +13,7 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'MainController',
         controllerAs: 'main'
       })
       .when('/about', {

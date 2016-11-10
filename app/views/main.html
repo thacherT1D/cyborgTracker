@@ -4,12 +4,11 @@
 <div class="row">
   <div class="col-md-4 col-sm-12" ng-repeat="task in main.tasks">
     <div class="card">
-
-      <p><a class="btn btn-lg btn-block btn-primary">
-        {{ task }}
+      <p><a ng-click="task.showButtons = true" class="btn btn-lg btn-block btn-primary">
+        {{ task.name }}
       </a></p>
-      <div>
-        <p><a class="btn btn-block btn-success">
+      <div ng-show="task.showButtons">
+        <p><a ng-click="main.addOne(task)" class="btn btn-block btn-success">
           Do It!
         </a></p>
         <p><a class="btn btn-block btn-info">
@@ -17,6 +16,9 @@
         </a></p>
         <p><a class="btn btn-block btn-warning">
           Edit Task
+        </a></p>
+        <p><a ng-click="task.showButtons = false" class="btn btn-block btn-default">
+          Close Window
         </a></p>
       </div>
     </div>
