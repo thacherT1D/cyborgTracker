@@ -8,7 +8,8 @@
 
     function MainService ($http, $q) {
       var tasks = [];
-      var task = [];
+      var task = {};
+      var add = {};
       var resolvedData = false;
 
       return {
@@ -39,7 +40,7 @@
             last_event: '',
             events: []
           });
-          task = [];
+          task = {};
         },
         clearTaskForm: function() {
 

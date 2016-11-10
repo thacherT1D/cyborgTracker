@@ -7,12 +7,12 @@
     <div id="taskInputForm" ng-show="showNewTaskWindow">
       <form role="form" ng-submit="main.addTask()">
         <fieldset class=form-group>
-          <input type="text" ng-model="task.task_name" class="form-control" placeholder="task name" required>
+          <input type="text" ng-model="main.task.task_name" class="form-control" placeholder="task name" required>
         </fieldset>
         <fieldset class=form-group>
-          <input type="text" ng-model="task.task_notes" class="form-control" placeholder="task notes">
+          <input type="text" ng-model="main.task.task_notes" class="form-control" placeholder="task notes">
         </fieldset>
-        <button type="submit" class="btn btn-primary" value="Add">Submit</button>
+        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
         <button type="button" class="btn btn-default" ng-click="showNewTaskWindow = false">Cancel</button>
       </form>
     </div>
