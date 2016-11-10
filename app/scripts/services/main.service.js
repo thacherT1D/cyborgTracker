@@ -13,7 +13,7 @@
       return {
         getTasks: function () {
           if(tasks.length == 0 && !resolvedData) {
-            return $http.get('../../tasks.json')
+            return $http.get('../../data/tasks.json')
               .then(function(result) {
                 tasks = result.data;
                 resolvedData = true;
@@ -27,7 +27,17 @@
         },
         doIt: function (task) {
           task.completed += 1;
+          task.last_event = new Date();
         },
+        newTask: function() {
+          this.tasks.push({
+            task_name: task.task_name,
+            task_notes: task.task_notes,
+            completed: 0,
+            last_event: new Date(),
+            events: []
+          });
+        }
         // toggleButtons: function(task) {
         //     if(task.showButtons == true) {
         //       task.showButtons = false;

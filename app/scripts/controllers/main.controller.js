@@ -18,7 +18,12 @@
     vm.addOne = function(task) {
       console.log('I did it!');
       MainService.doIt(task);
-      console.log(task.name, ': ', task.completed);
+      console.log(task.task_name, ': ', task.completed);
+      console.log(task.last_event);
+
+    };
+    vm.addTask = function() {
+      MainService.newTask();
     };
     // vm.switch = function(task) {
     //   MainService.toggleButtons(task);

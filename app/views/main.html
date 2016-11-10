@@ -1,11 +1,30 @@
+<p><a class="btn btn-block btn-info" ng-click="showNewTaskWindow = true">
+  New Task
+</a></p>
+<div class="row">
+  <div class="col-sm-12">
+    <div id="taskInputForm" ng-show="showNewTaskWindow">
+      <form role="form" ng-submit="main.addTask()">
+        <fieldset class=form-group>
+          <input type="text" ng-model="task.task_name" class="form-control" placeholder="task name" required>
+        </fieldset>
+        <fieldset class=form-group>
+          <input type="text" ng-model="task.task_notes" class="form-control" placeholder="task notes">
+        </fieldset>
+        <button type="submit" class="btn btn-primary" value="Add">Submit</button>
+        <button type="button" class="btn btn-default" ng-click="showNewTaskWindow = false">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
 </div>
 <div class="row">
-  <div class="col-md-4 col-sm-12" ng-repeat="task in main.tasks">
+  <div class="col-sm-12" ng-repeat="task in main.tasks">
     <div class="card">
       <p><a ng-click="task.showButtons = true" class="btn btn-lg btn-block btn-primary">
-        {{ task.name }}
+        {{ task.task_name }}
       </a></p>
       <div ng-show="task.showButtons">
         <p><a ng-click="main.addOne(task)" class="btn btn-block btn-success">
