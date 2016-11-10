@@ -28,6 +28,7 @@
         doIt: function (task) {
           task.completed += 1;
           task.last_event = new Date();
+          task.events.push(new Date());
         },
         newTask: function() {
           this.tasks.push({
@@ -37,6 +38,9 @@
             last_event: new Date(),
             events: []
           });
+        },
+        clearTaskForm: function() {
+
         }
         // toggleButtons: function(task) {
         //     if(task.showButtons == true) {
