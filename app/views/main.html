@@ -1,4 +1,5 @@
-<p><a class="btn btn-block btn-info" ng-click="showNewTaskWindow = true">
+
+<p><a class="newTaskButton btn btn-block btn-info" ng-click="showNewTaskWindow = true">
   New Task
 </a></p>
 <div class="row">
@@ -18,7 +19,7 @@
   </div>
 </div>
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1>cyborgTracker</h1>
 </div>
 <div class="row">
   <div class="col-sm-12" ng-repeat="task in main.tasks">
@@ -34,16 +35,16 @@
           History
         </a></p>
         <div ng-show="task.showHistory">
+          <p><a class="btn btn-xs btn-default pull-right" ng-click="task.showHistory = false">
+            Close History
+          </a></p>
           <p>
             Most Recent: <time am-time-ago="task.last_event"></time>
           </p>
-          Complete History:
+            Complete History:
           <ul>
             <li ng-repeat="event in task.events">{{ event | date : 'medium' }}</li>
           </ul>
-          <p><a class="btn btn-xs btn-default" ng-click="task.showHistory = false">
-            Close History
-          </a></p>
         </div>
         <p><a class="btn btn-block btn-warning">
           Edit Task
