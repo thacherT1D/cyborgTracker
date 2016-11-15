@@ -2,12 +2,7 @@
 
 angular
   .module('cyborgTrackerApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
     'angularMoment'
   ])
   .config(function ($routeProvider) {

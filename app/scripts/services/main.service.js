@@ -33,6 +33,9 @@
           task.completed += 1;
           task.last_event = new Date();
           task.events.push(new Date());
+          console.log(task.last_event);
+          console.log(task);
+
         },
         newTask: function(task_name, task_notes) {
           tasks.push({
@@ -49,13 +52,6 @@
           task.task_name = new_task_name;
           task.task_notes = new_task_notes;
         }
-        // toggleButtons: function(task) {
-        //     if(task.showButtons == true) {
-        //       task.showButtons = false;
-        //     } else {
-        //       task.showButtons = true;
-        //     }
-        // }
       }
     }
 })();
