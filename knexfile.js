@@ -3,7 +3,7 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/cyborg_dev'
+    connection: 'postgres://localhost/cyborg'
   },
 
   production: {
